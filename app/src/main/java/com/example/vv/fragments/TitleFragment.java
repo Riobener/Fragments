@@ -35,11 +35,10 @@ public class TitleFragment extends Fragment {
 
         ListView lvItems = (ListView) view.findViewById(R.id.lvItems);
         lvItems.setAdapter(itemsAdapter);
-
         lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                // WHAT TO DO WHEN CLICK
+                ((MainActivity)getActivity()).show(TestData.urls[position]);
             }
         });
     }

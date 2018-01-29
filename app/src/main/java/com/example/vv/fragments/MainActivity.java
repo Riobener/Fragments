@@ -14,19 +14,36 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (getResources().getConfiguration().orientation ==
-                Configuration.ORIENTATION_LANDSCAPE){
+                Configuration.ORIENTATION_LANDSCAPE) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.left, titles)
                     .add(R.id.right, new WebFragment())
                     .commit();
-        }
-        else {
+        } else {
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.main, titles)
                     .commit();
         }
+    }
+        void show(String url){
+             WebFragment fragment = new WebFragment();
+             Bundle bundle = new Bundle();
+             bundle.putString("url", url);
+             fragment.setArguments(bundle);
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE){
+               getSupportFragmentManager().beginTransaction().replace(R.id.right, fragment)
+               .commit();
+        }
+        else{
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.main, fragment).
+                        addToBackStack(null).commit();
+        }
+
     }
 }
 

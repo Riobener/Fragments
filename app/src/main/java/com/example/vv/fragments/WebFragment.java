@@ -45,7 +45,9 @@ public class WebFragment extends Fragment {
                 Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
             }
         });
-        //webView.loadUrl("http://...");
+        Bundle b = getArguments();
+        if (b != null && b.getString("url") != null)
+            webView.loadUrl(b.getString("url"));
     }
 
 }
