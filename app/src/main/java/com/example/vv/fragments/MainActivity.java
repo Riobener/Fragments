@@ -3,17 +3,31 @@ package com.example.vv.fragments;
 import android.content.res.Configuration;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity{
 
-    Fragment titles = new TitleFragment();
+    //Fragment titles = new TitleFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (getResources().getConfiguration().orientation ==
+
+    }
+    public void show (String url){
+        FragmentManager fm = getSupportFragmentManager();
+        WebFragment webFragment =(WebFragment) fm.findFragmentById(R.id.tfragment2);
+        webFragment.show(url);
+    }
+
+
+
+
+
+
+       /* if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -43,8 +57,9 @@ public class MainActivity extends AppCompatActivity{
                         replace(R.id.main, fragment).
                         addToBackStack(null).commit();
         }
-
+*/
     }
-}
+
+
 
 

@@ -7,10 +7,24 @@
         android:id="@+id/left"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
+        <fragment
+            android:name="com.example.vv.fragments.TitleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tfragment1">
+
+        </fragment>
     </FrameLayout>
     <FrameLayout
         android:id="@+id/right"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <fragment
+            android:name="com.example.vv.fragments.WebFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tfragment2">
+
+        </fragment>
         </FrameLayout>
 </LinearLayout>

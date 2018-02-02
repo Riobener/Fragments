@@ -18,8 +18,12 @@ import android.widget.Toast;
 
 
 public class WebFragment extends Fragment {
+WebView webView;
 
+    public void show(String url){
+    webView.loadUrl(url);
 
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +38,7 @@ public class WebFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        WebView webView = view.findViewById(R.id.webView);
+        webView = view.findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
 
 

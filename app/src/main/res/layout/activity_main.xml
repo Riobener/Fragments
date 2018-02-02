@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-   <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding ="10pt"
-    android:id="@+id/main"
-    android:orientation="vertical">
-   </LinearLayout>
+    android:layout_height="match_parent">
+   <FrameLayout
+       android:id="@+id/left"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+      <fragment
+          android:name="com.example.vv.fragments.TitleFragment"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/tfragment1">
+
+      </fragment>
+   </FrameLayout>
+   <FrameLayout
+       android:id="@+id/right"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <fragment
+          android:name="com.example.vv.fragments.WebFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/tfragment2">
+
+      </fragment>
+   </FrameLayout>
+</LinearLayout>

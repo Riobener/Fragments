@@ -39,6 +39,7 @@ public class TitleFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
                 ((MainActivity)getActivity()).show(TestData.urls[position]);
+
             }
         });
     }
